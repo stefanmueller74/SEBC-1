@@ -32,8 +32,10 @@
     nslookup ip-172-31-18-55.eu-central-1.compute.internal
     
 #7 Verify the nscd service is running
-    
+    #install NSCD 
+    sudo yum install nscd
     
 #8 Verify the ntpd service is running
-    
+    #install ntpd 
+    sudo yum install ntp
 
