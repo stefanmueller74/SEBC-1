@@ -17,6 +17,8 @@
     echo never > /sys/kernel/mm/transparent_hugepage/defrag
     # disable TPH at boottime: add "transparent_hugepage=never"
     /boot/grub/grub.conf 
+        kernel /boot/vmlinuz-3.10.0-514.el7.x86_64 ro root=UUID=3ed41454-00c8-4803-bf61-2ee88aa54dbf console=hvc0 LANG=en_US.UTF-8 transparent_hugepage=never
+
 
 #5 Report the network interface attributes
 
