@@ -5,9 +5,10 @@ cat /etc/sysctl.conf
 cat /proc/sys/vm/swappiness
 
 #2 Show mount attributes
-mount
+mount | grep xfs
 
 #3 Show the reserve space of any non-root, ext-based volumes
+n.a. (see #2)
 
 #4 Show that transparent hugepages is disabled
 
