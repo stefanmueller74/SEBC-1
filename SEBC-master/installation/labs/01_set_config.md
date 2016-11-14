@@ -5,12 +5,12 @@
     cat /proc/sys/vm/swappiness
 
 #2 Show mount attributes
-mount | grep xfs
+    mount | grep xfs
 
 #3 Show the reserve space of any non-root, ext-based volumes
-n.a. (see #2)
+    n.a. (see #2)
 
-    #4 Show that transparent hugepages is disabled
+#4 Show that transparent hugepages is disabled
     cat /sys/kernel/mm/transparent_hugepage/enabled
     # disable TPH at runtime
     echo never > /sys/kernel/mm/transparent_hugepage/enabled
