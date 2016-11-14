@@ -1,8 +1,8 @@
 #1 Set swappiness
-echo vm.swappiness=1 >> /etc/sysctl.conf
-sudo sysctl -p /etc/sysctl.conf
-cat /etc/sysctl.conf
-cat /proc/sys/vm/swappiness
+    echo vm.swappiness=1 >> /etc/sysctl.conf
+    sudo sysctl -p /etc/sysctl.conf
+    cat /etc/sysctl.conf
+    cat /proc/sys/vm/swappiness
 
 #2 Show mount attributes
 mount | grep xfs
