@@ -35,9 +35,11 @@
     # AS ROOT install NSCD 
     yum install nscd
     service nscd start
+    #open point: enable at boottime
     
 #8 Verify the ntpd service is running
     # AS ROOT install ntpd 
     sudo yum install ntp
     service ntpd start
+    #open point: enable at boottime
 
