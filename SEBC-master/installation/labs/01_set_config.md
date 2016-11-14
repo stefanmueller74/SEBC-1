@@ -21,11 +21,19 @@
 
 
 #5 Report the network interface attributes
-
+    ifconfig
+    
 #6 Show forward and reverse host lookups using getent and nslookup
-
+    getent hosts
+    getent networks
+    #install bind-utils which contains "nslookup"
+    sudo yum install bind-utils
+    # get hostname with "hostname"
+    nslookup ip-172-31-18-55.eu-central-1.compute.internal
+    
 #7 Verify the nscd service is running
-
+    
+    
 #8 Verify the ntpd service is running
-
+    
 
