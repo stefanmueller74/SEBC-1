@@ -1,0 +1,3 @@
+# Install Oracle JDK
+
+  sudo yum install oracle-j2sdk1.7
