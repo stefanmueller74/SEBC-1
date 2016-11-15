@@ -57,6 +57,11 @@
     | sentry             |
     +--------------------+
 
-    
+  
+#5 Add  MariaDB JDBC Driver JAR to Oozie
+
+Cloudera recommends that you use the MySQL JDBC driver for MariaDB. 
+Copy or symbolically link the MySQL JDBC driver JAR to the /var/lib/oozie/ directory.
+
     
     
