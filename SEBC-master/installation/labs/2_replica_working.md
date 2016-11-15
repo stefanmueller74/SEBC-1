@@ -23,7 +23,7 @@
    sudo mkdir -p /usr/share/java/
    sudo cp /home/ec2-user/sources/mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar /usr/share/java/mysql-connector-java.jar
    
-#4 Creating CDH Database
+#4 Creating CDH Databases
     mysql -u root -p
    
     ## AMON database
@@ -42,6 +42,21 @@
     create database sentry DEFAULT CHARACTER SET utf8;
     grant all on amon.* TO 'sentry'@'%' IDENTIFIED BY 'sentry_password';
     
+    
+    ## Results 
+    MariaDB> show databases
+    +--------------------+
+    | Database           |
+    +--------------------+
+    | information_schema |
+    | amon               |
+    | metastore          |
+    | mysql              |
+    | performance_schema |
+    | rman               |
+    | sentry             |
+    +--------------------+
+
     
     
     
