@@ -33,15 +33,15 @@
     
     ## RMON database
     create database rman DEFAULT CHARACTER SET utf8;
-    grant all on amon.* TO 'rman'@'%' IDENTIFIED BY 'rman_password';
+    grant all on rman.* TO 'rman'@'%' IDENTIFIED BY 'rman_password';
     
     ## METASTORE database
     create database metastore DEFAULT CHARACTER SET utf8;
-    grant all on amon.* TO 'hive'@'%' IDENTIFIED BY 'hive_password';
+    grant all on metastore.* TO 'hive'@'%' IDENTIFIED BY 'hive_password';
     
     ## SENTRY database
     create database sentry DEFAULT CHARACTER SET utf8;
-    grant all on amon.* TO 'sentry'@'%' IDENTIFIED BY 'sentry_password';
+    grant all on sentry.* TO 'sentry'@'%' IDENTIFIED BY 'sentry_password';
     
     
     ## Results 
