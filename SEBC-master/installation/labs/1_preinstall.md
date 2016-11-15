@@ -58,7 +58,9 @@
     # get hostname with "hostname"
     nslookup ip-172-31-18-55.eu-central-1.compute.internal
     
-#7 Verify the nscd service is running
+#7 & 8 
+
+##  Verify the nscd service is running
     # AS ROOT install NSCD 
     yum install nscd
     service nscd start
@@ -69,4 +71,29 @@
     sudo yum install ntp
     service ntpd start
     systemctl enable ntpd.service
+
+        [root@ip-172-31-18-55 ec2-user]# service --status-all
+        netconsole module not loaded
+        Configured devices:
+        lo eth0
+        Currently active devices:
+        lo eth0
+        Usage: /etc/init.d/rh-cloud-firstboot {start|stop}
+        ● rhnsd.service - LSB: Starts the Spacewalk Daemon
+           Loaded: loaded (/etc/rc.d/init.d/rhnsd; bad; vendor preset: disabled)
+           Active: active (running) since Mon 2016-11-14 09:39:35 EST; 18h ago
+             Docs: man:systemd-sysv-generator(8)
+         Main PID: 2213 (rhnsd)
+           CGroup: /system.slice/rhnsd.service
+                   └─2213 rhnsd
+
+        Nov 14 09:39:35 ip-172-31-18-55 systemd[1]: Starting LSB: Starts the Spacewalk Daemon...
+        Nov 14 09:39:35 ip-172-31-18-55 rhnsd[2213]: Spacewalk Services Daemon starting up, check in interval 240 minutes.
+        Nov 14 09:39:35 ip-172-31-18-55 rhnsd[1984]: Starting Spacewalk Daemon: [  OK  ]
+        Nov 14 09:39:35 ip-172-31-18-55 systemd[1]: Started LSB: Starts the Spacewalk Daemon.
+        Nov 14 11:53:22 ip-172-31-18-55.eu-central-1.compute.internal rhnsd[2213]: /etc/sysconfig/rhn/systemid does not exist or is unreadable
+        Nov 14 15:53:22 ip-172-31-18-55.eu-central-1.compute.internal rhnsd[2213]: /etc/sysconfig/rhn/systemid does not exist or is unreadable
+        Nov 14 19:53:22 ip-172-31-18-55.eu-central-1.compute.internal rhnsd[2213]: /etc/sysconfig/rhn/systemid does not exist or is unreadable
+        Nov 14 23:53:22 ip-172-31-18-55.eu-central-1.compute.internal rhnsd[2213]: /etc/sysconfig/rhn/systemid does not exist or is unreadable
+        Nov 15 03:53:22 ip-172-31-18-55.eu-central-1.compute.internal rhnsd[2213]: /etc/sysconfig/rhn/systemid does not exist or is unreadable
 
