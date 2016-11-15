@@ -43,6 +43,13 @@
     create database sentry DEFAULT CHARACTER SET utf8;
     grant all on sentry.* TO 'sentry'@'%' IDENTIFIED BY 'sentry_password';
     
+    ## Oozie database
+    create database oozie DEFAULT CHARACTER SET utf8;
+    grant all on oozie.* TO 'oozie'@'%' IDENTIFIED BY 'oozie_password';
+
+    ## HUE database
+    create database hue DEFAULT CHARACTER SET utf8;
+    grant all on hue.* TO 'hue'@'%' IDENTIFIED BY 'hue_password';
     
     ## Results 
     MariaDB> show databases
