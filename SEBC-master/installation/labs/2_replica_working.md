@@ -57,17 +57,25 @@
     | sentry             |
     +--------------------+
 
+# 6 Configuring Replication
+      on mysql
+      
+      Edge: 54.93.126.39
+      # Edge node: 54.93.126.39
+      # Node1    : 54.93.129.228
+      # Node2    : 54.93.221.116
+      # Node 3   : 54.93.96.233
 
-# 6 Installing MariaDB on nodes
+      GRANT REPLICATION SLAVE ON *.* TO 'root'@'54.93.126.39' IDENTIFIED BY 'andreas';
+      SET GLOBAL binlog_format = 'ROW';
+      FLUSH TABLES WITH READ LOCK;
 
+# 7 Installing MariaDB on nodes
 
-
-
-# 7 Configuring Replication
+...
 
 
 #99 Add  MariaDB JDBC Driver JAR to Oozie
-
 Cloudera recommends that you use the MySQL JDBC driver for MariaDB. 
 Copy or symbolically link the MySQL JDBC driver JAR to the /var/lib/oozie/ directory.
 
