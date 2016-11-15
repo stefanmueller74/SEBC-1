@@ -2,7 +2,7 @@
   yum install mariadb-server
   
   
-#ERRORS  mariadb
+##ERRORS while starting service mariadb
 
     161115 03:14:44 mysqld_safe Logging to '/var/log/mariadb.log'.
     161115 03:14:44 mysqld_safe Starting mysqld daemon with databases from /var/lib/mysql
