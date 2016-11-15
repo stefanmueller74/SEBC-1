@@ -38,4 +38,8 @@ http://www.cloudera.com/documentation/enterprise/5-8-x/topics/cm_ig_installing_c
     +--------------------+
     | scm                |
     +--------------------+
+# 3 Start CM
 
+* AWS: Port 7180 für die entsprechende SecurityGroup freigeben
+* URL: http://54.93.221.40:7180/cmf/login
+* Credentials: admin/admin
