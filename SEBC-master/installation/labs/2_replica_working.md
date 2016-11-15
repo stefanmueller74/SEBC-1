@@ -11,3 +11,6 @@
     /usr/bin/mysqld_safe: line 183: /var/log/mariadb.log: Permission denied
 
     mysqld_safe mysqld from pid file /var/run/maridb/mariadb.pid ended
+
+## Permissions
+  http://linuxcommand.org/lts0070.php
