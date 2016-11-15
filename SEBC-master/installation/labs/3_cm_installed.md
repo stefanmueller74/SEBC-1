@@ -45,5 +45,5 @@ http://www.cloudera.com/documentation/enterprise/5-8-x/topics/cm_ig_installing_c
 * URL: http://54.93.221.40:7180/cmf/login
 * Credentials: admin/admin
 
-## Hosts für CLuster konfigurieren
+## Hosts im Cluster für CDH konfigurieren
     Adressbereich 172.31.18.[55-59]
