@@ -11,7 +11,8 @@
     [mysqld_safe]
     log-error=/var/log/mariadb/mariadb.log
     pid-file=/var/run/mariadb/mariadb.pid
-
+    systemctl start mariadb
+    ystemctl status mariadb
   
 #2 Running Secury Routings
     sudo /usr/bin/mysql_secure_installation
@@ -74,6 +75,24 @@
     +---------------------------+----------+--------------+------------------+
     | mariadb_binary_log.000002 |     2370 |              |                  |
     +---------------------------+----------+--------------+------------------+
+
+## Install MYSQL on Replica 54.93.126.39
+    sudo yum install mariadb-server
+    sudo systemctl start mariadb
+    sudo systemctl status mariadb
+    sudo mkdir -p /usr/share/java/
+    sudo cp /home/ec2-user/sources/mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar /usr/share/java/mysql-connector-java.jar
+    sudo /usr/bin/mysql_secure_installation
+    sudo service mariadb stop 
+    sudo service mariadb start 
+       
+## Login to the replica server and configure a connection to the master
+    
+    mysql -u root -p
+    CHANGE MASTER TO MASTER_HOST='35.163.72.61', MASTER_USER='root', \
+    MASTER_PASSWORD='andreas', \
+    MASTER_LOG_FILE='mysql_binary_log.000002', \
+    MASTER_LOG_POS=2370;
 
 # 7 Installing MariaDB on nodes
 
