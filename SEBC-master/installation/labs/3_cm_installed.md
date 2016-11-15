@@ -23,13 +23,9 @@ http://www.cloudera.com/documentation/enterprise/5-8-x/topics/cm_ig_installing_c
 
     /usr/share/cmf/schema/scm_prepare_database.sh
     Parameters: 
-    -database-type myswl
-    -database-name scm
-    -username scm
-    -password scm_password
+    1. database-type 2. database-name 3. username 4. password scm_password
+    /usr/share/cmf/schema/scm_prepare_database.sh  mysql scm scm 'scm_password'
     
-     /usr/share/cmf/schema/scm_prepare_database.sh  -database-type myswl -database-name scm -username scm -password scm_password
-
 ## Create DB for CM
 
 ### SCM database
