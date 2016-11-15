@@ -24,6 +24,7 @@
     ifconfig
     
 #6 Show forward and reverse host lookups using getent and nslookup
+    vi /etc/hosts ### adding hostnames, additionally adding ALL IMCP rule n AWS
     getent hosts
     getent networks
     #install bind-utils which contains "nslookup"
