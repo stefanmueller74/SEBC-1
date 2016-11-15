@@ -61,10 +61,10 @@
       on mysql
       
       Edge: 54.93.126.39
-      # Edge node: 54.93.126.39
-      # Node1    : 54.93.129.228
-      # Node2    : 54.93.221.116
-      # Node 3   : 54.93.96.233
+      # Edge      : 54.93.126.39
+      # Node 1    : 54.93.129.228
+      # Node 2    : 54.93.221.116
+      # Node 3    : 54.93.96.233
 
       GRANT REPLICATION SLAVE ON *.* TO 'root'@'54.93.126.39' IDENTIFIED BY 'andreas';
       SET GLOBAL binlog_format = 'ROW';
