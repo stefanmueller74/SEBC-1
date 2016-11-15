@@ -25,6 +25,14 @@
     
 #6 Show forward and reverse host lookups using getent and nslookup
     vi /etc/hosts ### adding hostnames, additionally adding ALL IMCP rule n AWS
+        127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+        ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+        54.93.221.40 master
+        54.93.129.228 node1
+        54.93.221.116 node2
+        54.93.96.233 node3
+        54.93.126.39 edge
+    
     getent hosts
     getent networks
     #install bind-utils which contains "nslookup"
