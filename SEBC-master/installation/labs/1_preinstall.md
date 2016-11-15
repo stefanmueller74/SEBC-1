@@ -66,7 +66,7 @@
     service nscd start
     systemctl enable nscd.service
     
-#8 Verify the ntpd service is running
+## Verify the ntpd service is running
     # AS ROOT install ntpd 
     sudo yum install ntp
     service ntpd start
