@@ -58,22 +58,28 @@
     | sentry             |
     +--------------------+
 
-# 6 Configuring Replication
-      on mysql
+# 6a Open Port 3306 across server
+
+    In AWS attach new rule "TCP on Port 3306" to the appropriate security group
+
+# 6b Configuring Replication
+
+      # MASTER   : 54.93.221.40
       # Edge      : 54.93.126.39
       # Node 1    : 54.93.129.228
       # Node 2    : 54.93.221.116
       # Node 3    : 54.93.96.233
 
-      GRANT REPLICATION SLAVE ON *.* TO 'root'@'54.93.126.39' IDENTIFIED BY 'andreas';
+      GRANT REPLICATION SLAVE ON *.* TO 'root'@'ip-172-31-18-56.eu-central-1.compute.internal' IDENTIFIED BY 'andreas';
       SET GLOBAL binlog_format = 'ROW';
       FLUSH TABLES WITH READ LOCK;
       
 ## Checking Status on Master
+
     +---------------------------+----------+--------------+------------------+
     | File                      | Position | Binlog_Do_DB | Binlog_Ignore_DB |
     +---------------------------+----------+--------------+------------------+
-    | mariadb_binary_log.000002 |     2370 |              |                  |
+    | mariadb_binary_log.000004 |      245 |              |                  |
     +---------------------------+----------+--------------+------------------+
 
 ## Install MYSQL on Replica 54.93.126.39
@@ -89,10 +95,12 @@
 ## Login to the replica server and configure a connection to the master
     
     mysql -u root -p
-    CHANGE MASTER TO MASTER_HOST='35.163.72.61', MASTER_USER='root', \
-    MASTER_PASSWORD='andreas', \
-    MASTER_LOG_FILE='mysql_binary_log.000002', \
-    MASTER_LOG_POS=2370;
+    CHANGE MASTER TO MASTER_HOST='ip-172-31-18-55.eu-central-1.compute.internal', MASTER_USER='root', MASTER_PASSWORD='andreas', \
+    MASTER_LOG_FILE='mysql_binary_log.000004', MASTER_LOG_POS=245;
+    
+## Slaves starten
+    START SLAVE;
+    SLAVE STATUS; 
 
 # 7 Installing MariaDB on nodes
 
