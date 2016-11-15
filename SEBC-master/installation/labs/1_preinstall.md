@@ -22,6 +22,24 @@
 
 #5 Report the network interface attributes
     ifconfig
+    eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9001
+        inet 172.31.18.55  netmask 255.255.240.0  broadcast 172.31.31.255
+        inet6 fe80::4c7:c8ff:fe06:1799  prefixlen 64  scopeid 0x20<link>
+        ether 06:c7:c8:06:17:99  txqueuelen 1000  (Ethernet)
+        RX packets 66148  bytes 76604931 (73.0 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 20701  bytes 3081779 (2.9 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+    lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1  (Local Loopback)
+        RX packets 10  bytes 844 (844.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 10  bytes 844 (844.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
     
 #6 Show forward and reverse host lookups using getent and nslookup
     vi /etc/hosts ### adding hostnames, additionally adding ALL IMCP rule n AWS
