@@ -40,6 +40,10 @@ http://www.cloudera.com/documentation/enterprise/5-8-x/topics/cm_ig_installing_c
     +--------------------+
 # 3 Start CM
 
+## Login
 * AWS: Port 7180 für die entsprechende SecurityGroup freigeben
 * URL: http://54.93.221.40:7180/cmf/login
 * Credentials: admin/admin
+
+## Hosts für CLuster konfigurieren
+    Adressbereich 172.31.18.[55-59]
