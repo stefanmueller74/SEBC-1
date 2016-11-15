@@ -72,7 +72,8 @@
     service ntpd start
     systemctl enable ntpd.service
 
-        [root@ip-172-31-18-55 ec2-user]# service --status-all
+## checking 
+        >> service --status-all
         netconsole module not loaded
         Configured devices:
         lo eth0
