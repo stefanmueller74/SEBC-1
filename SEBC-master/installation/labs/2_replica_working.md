@@ -67,6 +67,13 @@
       GRANT REPLICATION SLAVE ON *.* TO 'root'@'54.93.126.39' IDENTIFIED BY 'andreas';
       SET GLOBAL binlog_format = 'ROW';
       FLUSH TABLES WITH READ LOCK;
+      
+## Checking Status on Master
+    +---------------------------+----------+--------------+------------------+
+    | File                      | Position | Binlog_Do_DB | Binlog_Ignore_DB |
+    +---------------------------+----------+--------------+------------------+
+    | mariadb_binary_log.000002 |     2370 |              |                  |
+    +---------------------------+----------+--------------+------------------+
 
 # 7 Installing MariaDB on nodes
 
