@@ -47,3 +47,13 @@ http://www.cloudera.com/documentation/enterprise/5-8-x/topics/cm_ig_installing_c
 
 ## Hosts im Cluster für CDH konfigurieren
     Adressbereich 172.31.18.[55-59]
+    
+    Optionen
+    > Schritt 1: Version            5.8.2 über Parcel/Repo hinzufügen (http://archive.cloudera.com/cdh5/parcels/5.8.2/)
+    > Schritt 2: Java:              NICHT installieren
+    > Schritt 3: Einzelusermode:    NICHT aktivieren
+    > Schritt 4: SSH-Zugangsdaten:  anderer User: ec2-user + KeyFile hochladen
+    > Schritt 5: Check Installationsstatus
+    > Schritt 6: n.a.
+    > Schritt 7: Parcelss verteilen
+    
