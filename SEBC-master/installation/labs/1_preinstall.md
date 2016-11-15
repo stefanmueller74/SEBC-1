@@ -8,7 +8,15 @@
     mount | grep xfs
 
 #3 Show the reserve space of any non-root, ext-based volumes
-    n.a. (see #2)
+    # df -h
+    Filesystem      Size  Used Avail Use% Mounted on
+    /dev/xvda2       10G  2.4G  7.7G  24% /
+    devtmpfs        7.3G     0  7.3G   0% /dev
+    tmpfs           7.2G     0  7.2G   0% /dev/shm
+    tmpfs           7.2G   17M  7.2G   1% /run
+    tmpfs           7.2G     0  7.2G   0% /sys/fs/cgroup
+    tmpfs           1.5G     0  1.5G   0% /run/user/1000
+
 
 #4 Show that transparent hugepages is disabled
     cat /sys/kernel/mm/transparent_hugepage/enabled
