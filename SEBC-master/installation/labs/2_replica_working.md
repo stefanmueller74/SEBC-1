@@ -18,10 +18,10 @@
   DB Root-PW        andreas
   
 #3 Installing JDBC driver
-   URL: http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.40.tar.gz
-   tar zxvf /home/ec2-user/sources/mysql-connector-java-5.1.40.tar.gz
-   sudo mkdir -p /usr/share/java/
-   sudo cp /home/ec2-user/sources/mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar /usr/share/java/mysql-connector-java.jar
+    URL: http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.40.tar.gz
+    tar zxvf /home/ec2-user/sources/mysql-connector-java-5.1.40.tar.gz
+    sudo mkdir -p /usr/share/java/
+    sudo cp /home/ec2-user/sources/mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar /usr/share/java/mysql-connector-java.jar
    
 #4 Creating CDH Databases
     mysql -u root -p
