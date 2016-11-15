@@ -56,4 +56,6 @@ http://www.cloudera.com/documentation/enterprise/5-8-x/topics/cm_ig_installing_c
     > Schritt 5: Check Installationsstatus
     > Schritt 6: n.a.
     > Schritt 7: Parcelss verteilen
+    > Schritt 8: Host-Inspektor
+    
     
