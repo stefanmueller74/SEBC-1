@@ -1,17 +1,18 @@
+#1 Setting up 
 ## Add user
-  useradd andreaskrisor
-
+    useradd andreaskrisor
 ## Switch to HDFS super user to create directory
-  su hdfs
-  hdfs dfs -mkdir /user/andreaskrisor
-  hdfs dfs -chown andreaskrisor:andreaskrisor /user/andreaskrisor
+    su hdfs
+    hdfs dfs -mkdir /user/andreaskrisor
+    ERROR: conecctions refused
+    
+    hdfs dfs -chown andreaskrisor:andreaskrisor /user/andreaskrisor
 
-## Run job
-### Teragen creates row of 100 bytes so 500 MB / 100 = 00000000
+## Teragen creates row of 100 bytes so 500 MB / 100 = 5000000
   su andreaskrisor
-  time hadoop jar /opt/cloudera/parcels/CDH/lib/hadoop-0.20-mapreduce/hadoop-examples.jar teragen -Dmapred.map.tasks=4 -D dfs.blocksize=32m -Dmapred.map.tasks.speculative.execution=false 500000000 terasort
+  time hadoop jar /opt/cloudera/parcels/CDH/lib/hadoop-0.20-mapreduce/hadoop-examples.jar teragen -Dmapred.map.tasks=4 -D dfs.blocksize=32m -Dmapred.map.tasks.speculative.execution=false 5000000 terasort
 
-## Result (almost 10 Gb unreplicated, avg size of block is 32Mb)
+## Result 
   hdfs dfs -du -h /user/andreaskrisor/terasort
 
   real	4m9.831s
