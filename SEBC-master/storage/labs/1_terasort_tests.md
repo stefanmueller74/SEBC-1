@@ -4,7 +4,11 @@
 ## Switch to HDFS super user to create directory
     su hdfs
     hdfs dfs -mkdir /user/andreaskrisor
-    ERROR: conecctions refused
+    
+    ERROR
+    [hdfs@ip-172-31-18-55 CDH]$ hadoop fs  -ls
+    ls: Call From ip-172-31-18-55.eu-central-1.compute.internal/172.31.18.55 to ip-172-31-18-55.eu-central-1.compute.internal:8020 failed on connection exception: java.net.ConnectException: Connection refused
+    For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
     
     hdfs dfs -chown andreaskrisor:andreaskrisor /user/andreaskrisor
 
