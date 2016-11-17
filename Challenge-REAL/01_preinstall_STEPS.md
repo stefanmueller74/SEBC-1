@@ -1,4 +1,4 @@
-# Making GIT avalailabel on all nodes
+# Making GIT avalailable on all nodes
 
     sudo su 
     cd /home/ec2-user
