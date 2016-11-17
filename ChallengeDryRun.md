@@ -164,3 +164,24 @@
         sudo /usr/share/cmf/schema/scm_prepare_database.sh  mysql scm scm scm_password -h ip-172-31-24-138.eu-central-1.compute.internal -P 3306
 
         service cloudera-scm-server start
+        
+# 3 Installing CDH
+
+    AWS: Port 7180 für die entsprechende SecurityGroup freigeben
+    URL: http://54.93.124.224:7180
+    Credentials: admin/admin
+
+## Hosts im Cluster für CDH konfigurieren
+
+* Adressbereich 172.31.24.[138-142]
+
+* Optionen
+** Schritt 1: Version            5.8.2 über Parcel/Repo hinzufügen (http://archive.cloudera.com/cdh5/parcels/5.8.2/)
+** Schritt 2: Java:              NICHT installieren
+** Schritt 3: Einzelusermode:    NICHT aktivieren
+** Schritt 4: SSH-Zugangsdaten:  anderer User: ec2-user + KeyFile hochladen
+** Schritt 5: Check Installationsstatus
+** Schritt 6: n.a.
+** Schritt 7: Parcelss verteilen
+** Schritt 8: Host-Inspektor
+
