@@ -57,9 +57,18 @@
        
 # Challenge 1: Install a MySQL server
 
-## Install MySQL 5.6.x server on the node you declared in `0_setup.md`
-    * Use the YUM repository from `dev.mysql.com`
-    * Copy `/etc/yum.repos.d/mysql-community.repo` to `challenges/labs/1_mysql-community.repo.md`
+## Install MySQL 5.6.x using yum
+* URL: http://dev.mysql.com/doc/refman/5.7/en/linux-installation-yum-repo.html
+
+### Download RepoFile
+    wget https://dev.mysql.com/get/mysql57-community-release-el6-9.noarch.rpm
+    sudo yum localinstall mysql57-community-release-el6-9.noarch.rpm
+### Edit RepoFile
+    vi /etc/yum.repos.d/mysql-community.repo
+    => set 5.6 to enabled and 5.7 to disabled
+### Install MYSQL
+    sudo yum install mysql-community-server
+    
 ## On all cluster nodes:
     * Install the MySQL client package and the MySQL JDBC connector file.
 
