@@ -190,22 +190,21 @@
 
 # 4 HDFS Smoketest
 
-## Preparing: Add user
-
-        useradd andreaskrisor
+## Preparing: Create Directories for kang
 
         Switch to HDFS super user to create directory
 
         su hdfs
-        hdfs dfs -mkdir /user/andreaskrisor
-        hdfs dfs -chown andreaskrisor:andreaskrisor /user/andreaskrisor
+        hdfs dfs -mkdir /user/kang
+        hdfs dfs -chown kang:kang /user/kang
+        exit
 
 ## Teragen creates row of 100 bytes so 500 MB / 100 = 5000000
 
-        su andreaskrisor
-        hadoop jar /opt/cloudera/parcels/CDH/lib/hadoop-0.20-mapreduce/hadoop-examples.jar teragen -Dmapred.map.tasks=4 -D dfs.blocksize=32m -Dmapred.map.tasks.speculative.execution=false 5000000 terasort
+        su kang
+        time hadoop jar /opt/cloudera/parcels/CDH/lib/hadoop-0.20-mapreduce/hadoop-examples.jar teragen -Dmapred.map.tasks=4 -D dfs.blocksize=32m -Dmapred.map.tasks.speculative.execution=false 5000000 terasort-01
 
-        hdfs dfs -du -h /user/andreaskrisor/terasort
+        hdfs dfs -du -h /user/kang/terasort-01
         59.6 M  178.8 M  /user/andreaskrisor/terasort/part-m-00000
         59.6 M  178.8 M  /user/andreaskrisor/terasort/part-m-00001
         59.6 M  178.8 M  /user/andreaskrisor/terasort/part-m-00002
