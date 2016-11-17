@@ -164,3 +164,69 @@
         sudo /usr/share/cmf/schema/scm_prepare_database.sh  mysql scm scm scm_password -h ip-172-31-24-138.eu-central-1.compute.internal -P 3306
 
         service cloudera-scm-server start
+        
+# 3 Installing CDH
+
+    AWS: Port 7180 für die entsprechende SecurityGroup freigeben
+    URL: http://54.93.124.224:7180
+    Credentials: admin/admin
+
+## Hosts im Cluster für CDH konfigurieren
+
+* Adressbereich 172.31.24.[138-142]
+
+* Optionen
+
+        ** Schritt 1: Version            5.8.0 über Parcel/Repo hinzufügen (http://archive.cloudera.com/cdh5/parcels/5.8.0)
+        ** Schritt 2: Java:              beides aktivieren
+                        [x] Install Oracle Java SE Development Kit (JDK)
+                        [X] Install Java Unlimited Strength Encryption Policy Files 
+        ** Schritt 3: Einzelusermode:    NICHT aktivieren
+        ** Schritt 4: SSH-Zugangsdaten:  anderer User: ec2-user + KeyFile hochladen
+        ** Schritt 5: Check Installationsstatus
+        ** Schritt 6: n.a.
+        ** Schritt 7: Parcelss verteilen
+        ** Schritt 8: Host-Inspektor
+
+# 4 HDFS Smoketest
+
+## Preparing: Create Directories for kang
+
+        Switch to HDFS super user to create directory
+
+        su hdfs
+        hdfs dfs -mkdir /user/kang
+        hdfs dfs -chown kang:kang /user/kang
+        exit
+
+## Teragen creates row of 100 bytes so 500 MB / 100 = 5000000
+
+        su kang
+        time hadoop jar /opt/cloudera/parcels/CDH/lib/hadoop-0.20-mapreduce/hadoop-examples.jar teragen -Dmapred.map.tasks=4 -D dfs.blocksize=32m -Dmapred.map.tasks.speculative.execution=false 5000000 terasort-01
+
+        hdfs dfs -du -h /user/kang/terasort-01
+        59.6 M  178.8 M  /user/andreaskrisor/terasort/part-m-00000
+        59.6 M  178.8 M  /user/andreaskrisor/terasort/part-m-00001
+        59.6 M  178.8 M  /user/andreaskrisor/terasort/part-m-00002
+        59.6 M  178.8 M  /user/andreaskrisor/terasort/part-m-00003
+
+### Result
+
+          hdfs fsck /user/andreaskrisor/terasort
+          Connecting to namenode via http://ip-172-31-9-37.eu-west-1.compute.internal:50070
+
+        Trying the terasort
+
+          time hadoop jar /opt/cloudera/parcels/CDH/lib/hadoop-0.20-mapreduce/hadoop-examples.jar terasort -Dmapred.map.tasks.speculative.execution=false terasort terasort_out 
+
+            real    0m27.751s
+            user    0m7.595s
+            sys     0m0.350s
+
+        Same thing limiting the block size for a mapper to take more data
+
+          time hadoop jar /opt/cloudera/parcels/CDH/lib/hadoop-0.20-mapreduce/hadoop-examples.jar terasort -Dmapreduce.input.fileinputformat.split.minsize=134217728 -Dmapreduce.input.fileinputformat.split.maxsize=134217728 -Dmapred.map.tasks.speculative.execution=false terasort terasort_out 
+
+            real    0m28.571s
+            user    0m7.028s
+            sys     0m0.400s
