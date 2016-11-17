@@ -78,10 +78,11 @@
     sudo  yum -y localinstall mysql57-community-release-el6-9.noarch.rpm
     sudo yum-config-manager --disable mysql57-community
     sudo yum-config-manager --enable mysql56-community
+    sudo yum repolist enabled | grep "mysql.*-community.*"
     sudo yum -y install mysql-community-client
 ### Install  MySQL JDBC connector file.
-    wget http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.40.tar.gz
-    tar zxvf mysql-connector-java-5.1.40.tar.gz
+    sudo wget http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.40.tar.gz
+    sudo tar zxvf mysql-connector-java-5.1.40.tar.gz
     sudo mkdir -p /usr/share/java/
     sudo cp ./mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar /usr/share/java/mysql-connector-java.jar
 
