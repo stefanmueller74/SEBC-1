@@ -59,6 +59,7 @@
 
 ## Install MySQL 5.6.x using yum
 * URL: http://dev.mysql.com/doc/refman/5.7/en/linux-installation-yum-repo.html
+* URL: https://dev.mysql.com/doc/mysql-repo-excerpt/5.6/en/linux-installation-yum-repo.html
 
 ### Download RepoFile
     wget https://dev.mysql.com/get/mysql57-community-release-el6-9.noarch.rpm
