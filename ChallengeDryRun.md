@@ -53,8 +53,8 @@
         kodos:x:2501:
 
 ## Check Services
-        service --status-all | grep -e  nscd -e ntpd -e mysql
-        
+        service --status-all | grep -e  nscd -e ntpd -e mysql -e cloud
+       
 # Challenge 1: Install a MySQL server
 
 ## Install MySQL 5.6.x server on the node you declared in `0_setup.md`
