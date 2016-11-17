@@ -6,6 +6,10 @@
 * Instance-type: CentOS-6.5-base-20150305 - ami-98a79585
 * Attach Storage: 30GB
 
+        Checking diskspace 
+        df / -h
+        du / -h | sort -hr | head
+
 # 0 Setting up
 
 ## Swappiness
