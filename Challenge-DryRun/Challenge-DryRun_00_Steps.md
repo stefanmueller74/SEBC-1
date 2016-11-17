@@ -3,7 +3,7 @@
 ## Supported version 
 * URL: http://www.cloudera.com/documentation/director/1-1-x/topics/director_deployment_requirements.html#concept_fxs_mpn_
 * AMI: CentOS-6.5-base-20150305 - ami-98a79585
-* Instance-type: CentOS-6.5-base-20150305 - ami-98a79585
+* Instance-type: m3.xlarge
 * Attach Storage: 30GB
 
         Checking diskspace 
