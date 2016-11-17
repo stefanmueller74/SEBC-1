@@ -12,6 +12,9 @@
 
 # 0 Setting up
 
+## Install basic tools
+    sudo yum install wget
+
 ## Swappiness
     echo vm.swappiness=1 >> /etc/sysctl.conf
     sudo sysctl -p /etc/sysctl.conf
