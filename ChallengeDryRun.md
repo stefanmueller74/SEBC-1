@@ -33,7 +33,6 @@
     systemctl enable ntpd.service
 
 ## USER
-
     groupadd enslave
     groupadd destroy
     adduser kang  -u 2500 -G enslave
@@ -41,14 +40,15 @@
 
 ### Checking users and groups
 #### cat /etc/passwd | grep -e destroy -e enslave -e kang -e kodos
-            kang:x:2500:2500::/home/kang:/bin/bash
-            kodos:x:2501:2501::/home/kodos:/bin/bash
+        kang:x:2500:2500::/home/kang:/bin/bash
+        kodos:x:2501:2501::/home/kodos:/bin/bash
     
 #### cat /etc/group | grep -e destroy -e enslave -e kang -e kodos 
-            destroy:x:1002:kodos
-            enslave:x:1003:kang
-            kang:x:2500:
-            kodos:x:2501:
+        destroy:x:1002:kodos
+        enslave:x:1003:kang
+        kang:x:2500:
+        kodos:x:2501:
 
 ## Check Services
-service --status-all
+        service --status-all | grep -e  nscd -e ntpd -e mysql
+        
