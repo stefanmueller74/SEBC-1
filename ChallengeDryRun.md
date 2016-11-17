@@ -40,10 +40,11 @@
     adduser kodos -u 2501 -G destroy
 
 ### Checking users and groups
-    cat /etc/passwd | grep -e destroy -e enslave -e kang -e kodos| 
+#### cat /etc/passwd | grep -e destroy -e enslave -e kang -e kodos
             kang:x:2500:2500::/home/kang:/bin/bash
             kodos:x:2501:2501::/home/kodos:/bin/bash
-    cat /etc/group | grep -e destroy -e enslave -e kang -e kodos| 
+    
+#### cat /etc/group | grep -e destroy -e enslave -e kang -e kodos 
             destroy:x:1002:kodos
             enslave:x:1003:kang
             kang:x:2500:
