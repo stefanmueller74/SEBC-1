@@ -70,18 +70,66 @@
     sudo yum install mysql-community-server
     
 ## On all cluster nodes:
-    * Install the MySQL client package and the MySQL JDBC connector file.
+### Install  MySQL client package
+    sudo yum -y install yum-utils
+    sudo yum -y install wget
+    wget https://dev.mysql.com/get/mysql57-community-release-el6-9.noarch.rpm
+    sudo  yum -y localinstall mysql57-community-release-el6-9.noarch.rpm
+    sudo yum-config-manager --disable mysql57-community
+    sudo yum-config-manager --enable mysql56-community
+    sudo yum -y install mysql-community-client
+### Install  MySQL JDBC connector file.
+    wget http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.40.tar.gz
+    tar zxvf mysql-connector-java-5.1.40.tar.gz
+    sudo mkdir -p /usr/share/java/
+    sudo cp ./mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar /usr/share/java/mysql-connector-java.jar
 
-## Start the `mysqld` service
-    * Delete the `test` database
-    * Create the following databases
-        * `scm`
-        * `rman`
-        * `hive`
-        * `oozie`
-        * `hue`
-        * `sentry`
+## On MASTER start the `mysqld` service
+
+    sudo service mysqld start
+    
+* Run Securization
+        
+        mysql_secure_installation 
+    
+        a. Set password protection for the server --> PW: cloudera
+        b. Revoke permissions for anonymous users       Y
+        c. Permit remote privileged login               N
+        d. Remove test databases                        Y
+        e. Refresh privileges in memory                 Y
+       
+        sudo service mysqld restart
+    
+* Create the following databases
+
+        mysql -u root -p
+        
+        create database scm DEFAULT CHARACTER SET utf8;
+        grant all on scm.* TO 'scm'@'%' IDENTIFIED BY 'scm_password';
+        create database rman DEFAULT CHARACTER SET utf8;
+        grant all on rman.* TO 'rman'@'%' IDENTIFIED BY 'rman_password';
+        create database hive DEFAULT CHARACTER SET utf8;
+        grant all on hive.* TO 'hive'@'%' IDENTIFIED BY 'hive_password';
+        create database oozie DEFAULT CHARACTER SET utf8;
+        grant all on oozie.* TO 'oozie'@'%' IDENTIFIED BY 'oozie_password';
+        create database hue DEFAULT CHARACTER SET utf8;
+        grant all on hue.* TO 'hue'@'%' IDENTIFIED BY 'hue_password';
+        create database sentry DEFAULT CHARACTER SET utf8;
+        grant all on sentry.* TO 'sentry'@'%' IDENTIFIED BY 'sentry_password';
+        show databases;
+        
 ## OUTPUT
-    * The command and output of `mysql --version`
-    * The command and output for a list of databases in MySQL
-    * The command and output for a list of grants in MySQL
+
+* The command and output of `mysql --version`
+
+        mysql --version
+        
+* The command and output for a list of databases in MySQL
+
+        show databases;
+   
+* The command and output for a list of grants in MySQL
+
+        select * from information_schema.schema_privileges;
+
+    
