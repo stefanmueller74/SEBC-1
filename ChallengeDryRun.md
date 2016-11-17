@@ -176,8 +176,11 @@
 * Adressbereich 172.31.24.[138-142]
 
 * Optionen
-        ** Schritt 1: Version            5.8.2 über Parcel/Repo hinzufügen (http://archive.cloudera.com/cdh5/parcels/5.8.2/)
-        ** Schritt 2: Java:              NICHT installieren
+
+        ** Schritt 1: Version            5.8.0 über Parcel/Repo hinzufügen (http://archive.cloudera.com/cdh5/parcels/5.8.0)
+        ** Schritt 2: Java:              beides aktivieren
+                        [x] Install Oracle Java SE Development Kit (JDK)
+                        [X] Install Java Unlimited Strength Encryption Policy Files 
         ** Schritt 3: Einzelusermode:    NICHT aktivieren
         ** Schritt 4: SSH-Zugangsdaten:  anderer User: ec2-user + KeyFile hochladen
         ** Schritt 5: Check Installationsstatus
