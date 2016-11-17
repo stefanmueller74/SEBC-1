@@ -52,3 +52,24 @@
 ## Check Services
         service --status-all | grep -e  nscd -e ntpd -e mysql
         
+# Challenge 1: Install a MySQL server
+
+## Install MySQL 5.6.x server on the node you declared in `0_setup.md`
+    * Use the YUM repository from `dev.mysql.com`
+    * Copy `/etc/yum.repos.d/mysql-community.repo` to `challenges/labs/1_mysql-community.repo.md`
+## On all cluster nodes:
+    * Install the MySQL client package and the MySQL JDBC connector file.
+
+## Start the `mysqld` service
+    * Delete the `test` database
+    * Create the following databases
+        * `scm`
+        * `rman`
+        * `hive`
+        * `oozie`
+        * `hue`
+        * `sentry`
+## OUTPUT
+    * The command and output of `mysql --version`
+    * The command and output for a list of databases in MySQL
+    * The command and output for a list of grants in MySQL
