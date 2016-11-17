@@ -89,7 +89,7 @@
     sudo cp ./mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar /usr/share/java/mysql-connector-java.jar
     ls -l /usr/share/java/mysql-connector-java.jar
 
-## On MASTER start the `mysqld` service
+## start MySQL service
 
     sudo service mysqld start
     
@@ -137,4 +137,30 @@
 
         select * from information_schema.schema_privileges;
 
+# 2 Install CM 5.8.1 - on *Node 01*
+
+## Get & Edit REPO File
+
+        ### sudo wget https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/cloudera-manager.repo
+        sudo wget https://archive.cloudera.com/cm5/redhat/6/x86_64/cm/cloudera-manager.repo
+        sudo cp cloudera-manager.repo /etc/yum.repos.d/
+        sudo mv cloudera-manager.repo  cloudera-manager.repo_backup
     
+        sudo vi /etc/yum.repos.d/cloudera-manager.repo   
+        # Packages for Cloudera Manager, Version 5, on RedHat or CentOS 7 x86_64
+        name=Cloudera Manager
+        baseurl=https://archive.cloudera.com/cm5/redhat/6/x86_64/cm/5.8.1
+        gpgkey =https://archive.cloudera.com/cm5/redhat/6/x86_64/cm/RPM-GPG-KEY-cloudera
+        gpgcheck = 1
+
+## Installing CM
+
+        sudo yum install cloudera-manager-daemons cloudera-manager-server
+        
+        sudo yum install oracle-j2sdk1.7
+        
+        /usr/share/cmf/schema/scm_prepare_database.sh
+        Parameters: 1. database-type 2. database-name 3. username 4. password scm_password
+        sudo /usr/share/cmf/schema/scm_prepare_database.sh  mysql scm scm scm_password -h ip-172-31-24-138.eu-central-1.compute.internal -P 3306
+
+        service cloudera-scm-server start
