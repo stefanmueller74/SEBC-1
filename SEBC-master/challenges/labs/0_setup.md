@@ -5,7 +5,6 @@
 
 <pre><code>
 [root@ip-172-31-16-4 ec2-user]# lsb_release -a
-LSB Version:    :base-4.0-amd64:base-4.0-noarch:core-4.0-amd64:core-4.0-noarch:graphics-4.0-amd64:graphics-4.0-noarch:printing-4.0-amd64:printing-4.0-noarch
 Distributor ID: CentOS
 Description:    CentOS release 6.6 (Final)
 Release:        6.6
@@ -14,5 +13,69 @@ Codename:       Final
 
 # List the volume space you have available on each node
 
+## Node1
+<pre><code>
+[root@ip-172-31-16-4 KnowHow]#  df / -h
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/VolGroup-lv_root
+                       14G  1.9G   11G  15% /
+</code></pre>
+
+## Node3
+<pre><code>
+[root@ip-172-31-16-5 ec2-user]# df / -h
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/VolGroup-lv_root
+                       14G  1.9G   11G  15% /
+</code></pre>
+
+## Node3
+<pre><code>
+[root@ip-172-31-16-6 ec2-user]# df / -h
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/VolGroup-lv_root
+                       14G  1.9G   11G  15% /
+</code></pre>
+
+
+## Node4
+<pre><code>
+[root@ip-172-31-16-7 ec2-user]# df / -h
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/VolGroup-lv_root
+                       14G  1.9G   11G  15% /
+</code></pre>
+
+## Node5
+<pre><code>
+[root@ip-172-31-16-8 ec2-user]# df / -h
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/VolGroup-lv_root
+                       14G  1.9G   11G  15% /
+</code></pre>
+
+
 # The command and output for yum repolist enabled
- 
+
+<pre><code>
+[root@ip-172-31-16-4 ec2-user]# yum repolist enabled
+Loaded plugins: fastestmirror
+Determining fastest mirrors
+epel/metalink                                                                                                                                                         |  23 kB     00:03
+ * base: mirror.de.leaseweb.net
+ * epel: mirror.de.leaseweb.net
+ * extras: ftp-stud.fht-esslingen.de
+ * updates: mirror.netcologne.de
+base                                                                                                                                                                  | 3.7 kB     00:00
+base/primary_db                                                                                                                                                       | 4.7 MB     00:00
+epel                                                                                                                                                                  | 4.3 kB     00:00
+epel/primary_db                                                                                                                                                       | 5.9 MB     00:00
+extras                                                                                                                                                                | 3.4 kB     00:00
+extras/primary_db                                                                                                                                                     |  37 kB     00:00
+updates                                                                                                                                                               | 3.4 kB     00:00
+updates/primary_db                                                                                                                                                    | 3.1 MB     00:00
+repo id                                                                 repo name                                                                                                      status
+base                                                                    CentOS-6 - Base                                                                                                 6,696
+epel                                                                    Extra Packages for Enterprise Linux 6 - x86_64                                                                 12,230
+extras                                                                  CentOS-6 - Extras                                                                                                  62
+</code></pre>
