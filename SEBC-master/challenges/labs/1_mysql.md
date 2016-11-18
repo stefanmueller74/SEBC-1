@@ -137,11 +137,11 @@
         grant all on hue.* TO 'hue'@'%' IDENTIFIED BY 'hue_password';
         create database sentry DEFAULT CHARACTER SET utf8;
         grant all on sentry.* TO 'sentry'@'%' IDENTIFIED BY 'sentry_password';
-##  Results
+##  Results - MySQL Version
     # MySQL Version
     [root@ip-172-31-16-4 ec2-user]# mysql --version
     mysql  Ver 14.14 Distrib 5.6.34, for Linux (x86_64) using  EditLine wrapper
-    # DB list
+## Results DB list
     mysql>     show databases;
         +--------------------+
         | Database           |
@@ -157,8 +157,9 @@
         | sentry             |
         +--------------------+
         9 rows in set (0.00 sec)
-     # Grants - reading the data dictionairy of mysql
-     mysql> select * from information_schema.schema_privileges;
+## Restuls Grants - reading the data dictionairy of mysql
+<pre><code>
+mysql> select * from information_schema.schema_privileges;
         +--------------+---------------+--------------+-------------------------+--------------+
         | GRANTEE      | TABLE_CATALOG | TABLE_SCHEMA | PRIVILEGE_TYPE          | IS_GRANTABLE |
         +--------------+---------------+--------------+-------------------------+--------------+
@@ -272,3 +273,4 @@
 | 'sentry'@'%' | def           | sentry       | TRIGGER                 | NO           |
 +--------------+---------------+--------------+-------------------------+--------------+
 108 rows in set (0.00 sec)
+</pre></code>
