@@ -9,6 +9,32 @@
 # Results
 ## Show grants
 SHOW GRANTS FOR <database> and the output for each of rman, hive, and scm into the file
+mysql> show grants for rman;
+        +-----------------------------------------------------------------------------------------------------+
+        | Grants for rman@%                                                                                   |
+        +-----------------------------------------------------------------------------------------------------+
+        | GRANT USAGE ON *.* TO 'rman'@'%' IDENTIFIED BY PASSWORD '*AEF345BFE495D8E678EA9D3D5708FD110AD2F08E' |
+        | GRANT ALL PRIVILEGES ON `rman`.* TO 'rman'@'%'                                                      |
+        +-----------------------------------------------------------------------------------------------------+
+        2 rows in set (0.00 sec)
+
+        mysql> show grants for hive;
+        +-----------------------------------------------------------------------------------------------------+
+        | Grants for hive@%                                                                                   |
+        +-----------------------------------------------------------------------------------------------------+
+        | GRANT USAGE ON *.* TO 'hive'@'%' IDENTIFIED BY PASSWORD '*8AC2E431CC7A9F2C4C0E51A65B8D8175892D9F22' |
+        | GRANT ALL PRIVILEGES ON `hive`.* TO 'hive'@'%'                                                      |
+        +-----------------------------------------------------------------------------------------------------+
+        2 rows in set (0.00 sec)
+
+        mysql> show grants for scm;
+        +----------------------------------------------------------------------------------------------------+
+        | Grants for scm@%                                                                                   |
+        +----------------------------------------------------------------------------------------------------+
+        | GRANT USAGE ON *.* TO 'scm'@'%' IDENTIFIED BY PASSWORD '*E2D6A4ADCCA7B38098E85EAF9BB785AB21451139' |
+        +----------------------------------------------------------------------------------------------------+
+        1 row in set (0.00 sec)
+
 
 ## Create user directories in HDFS for bavaria and saxony
 ## Command and output for hdfs dfs -ls /user
