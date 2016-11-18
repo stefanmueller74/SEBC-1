@@ -22,7 +22,7 @@ Filesystem            Size  Used Avail Use% Mounted on
 /dev/mapper/VolGroup-lv_root
                        14G  1.9G   11G  15% /
 </code></pre>
-### Node3
+### Node2
 <pre><code>
 [root@ip-172-31-16-5 ec2-user]# df / -h
 Filesystem            Size  Used Avail Use% Mounted on
