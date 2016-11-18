@@ -78,4 +78,6 @@ repo id                                                                 repo nam
 base                                                                    CentOS-6 - Base                                                                                                 6,696
 epel                                                                    Extra Packages for Enterprise Linux 6 - x86_64                                                                 12,230
 extras                                                                  CentOS-6 - Extras                                                                                                  62
+updates                                                                 CentOS-6 - Updates                                                                                                603
+repolist: 19,591
 </code></pre>
