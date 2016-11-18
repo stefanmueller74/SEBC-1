@@ -76,7 +76,10 @@
 ## Installing  MySQL JDBC connector
     sudo mkdir -p /usr/share/java/
     sudo cp  /home/ec2-user/git-ak/Sources/mysql-connector-java-5.1.40-bin.jar /usr/share/java/mysql-connector-java.jar
-    ls -l /usr/share/java/mysql-connector-java.jar
+    
+    [root@ip-172-31-16-4 ec2-user]# ls -l /usr/share/java/mysql-connector-java.jar
+    -rw-r--r-- 1 root root 990927 Nov 18 18:16 /usr/share/java/mysql-connector-java.jar
+
 
 # 2 Install MySQL Client & JDBC Connector on other nodes
 ## Commands
