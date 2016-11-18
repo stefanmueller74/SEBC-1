@@ -1,3 +1,43 @@
+# 0 Getting more basic things done - on ALL Nodes
+## Swappiness
+    echo vm.swappiness=1 >> /etc/sysctl.conf
+    sudo sysctl -p /etc/sysctl.conf
+    cat /etc/sysctl.conf
+    cat /proc/sys/vm/swappiness
+## disable TPH at runtime
+    echo never > /sys/kernel/mm/transparent_hugepage/enabled
+    echo never > /sys/kernel/mm/transparent_hugepage/defrag
+## Install Services
+    sudo yum -y install bind-utils
+    yum -y install nscd
+    service nscd start
+    sudo yum -y install ntp
+    service ntpd start
+## Checking result on Nodes
+    service --status-all | grep -e nscd -e ntpd -e mysqld -e cloudera
+## Results
+### Node1
+    [root@ip-172-31-16-4 ec2-user]# service --status-all | grep -e nscd -e ntpd -e mysqld -e cloudera
+    mysqld (pid  10753) is running...
+    nscd (pid 10865) is running...
+    ntpd (pid  10905) is running...
+### Node2
+    [root@ip-172-31-16-5 ec2-user]#  service --status-all | grep -e nscd -e ntpd -e mysqld -e cloudera
+    nscd (pid 9232) is running...
+    ntpd (pid  9271) is running...
+### Node3
+    [root@ip-172-31-16-6 ec2-user]#     service --status-all | grep -e nscd -e ntpd -e mysqld -e cloudera
+    nscd (pid 8689) is running...
+    ntpd (pid  8728) is running...
+### Node4
+    [root@ip-172-31-16-7 ec2-user]#     service --status-all | grep -e nscd -e ntpd -e mysqld -e cloudera
+    nscd (pid 8702) is running...
+    ntpd (pid  8741) is running...
+### Node5
+    [root@ip-172-31-16-8 ec2-user]#     service --status-all | grep -e nscd -e ntpd -e mysqld -e cloudera
+    nscd (pid 8698) is running...
+    ntpd (pid  8737) is running...
+
 # 1 Install MySQL SERVER
 
 ## Installing config manager
