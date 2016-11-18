@@ -1,4 +1,6 @@
-# List the region, AMI ID, and OS you are using
+# 1 Basic Setup
+
+## List the region, AMI ID, and OS you are using
 * Region: Frankfurt
 * AMI ID: ami-98a79585
 * OS: CentOS 6.6 as getting output from lsb_release -a (despite the AMI description says CentOS-6.5-base-20150305)
@@ -11,42 +13,37 @@ Release:        6.6
 Codename:       Final
 </code></pre>
 
-# List the volume space you have available on each node
+## List the volume space you have available on each node
 
-## Node1
+### Node1
 <pre><code>
 [root@ip-172-31-16-4 KnowHow]#  df / -h
 Filesystem            Size  Used Avail Use% Mounted on
 /dev/mapper/VolGroup-lv_root
                        14G  1.9G   11G  15% /
 </code></pre>
-
-## Node3
+### Node3
 <pre><code>
 [root@ip-172-31-16-5 ec2-user]# df / -h
 Filesystem            Size  Used Avail Use% Mounted on
 /dev/mapper/VolGroup-lv_root
                        14G  1.9G   11G  15% /
 </code></pre>
-
-## Node3
+### Node3
 <pre><code>
 [root@ip-172-31-16-6 ec2-user]# df / -h
 Filesystem            Size  Used Avail Use% Mounted on
 /dev/mapper/VolGroup-lv_root
                        14G  1.9G   11G  15% /
 </code></pre>
-
-
-## Node4
+### Node4
 <pre><code>
 [root@ip-172-31-16-7 ec2-user]# df / -h
 Filesystem            Size  Used Avail Use% Mounted on
 /dev/mapper/VolGroup-lv_root
                        14G  1.9G   11G  15% /
 </code></pre>
-
-## Node5
+### Node5
 <pre><code>
 [root@ip-172-31-16-8 ec2-user]# df / -h
 Filesystem            Size  Used Avail Use% Mounted on
@@ -54,9 +51,7 @@ Filesystem            Size  Used Avail Use% Mounted on
                        14G  1.9G   11G  15% /
 </code></pre>
 
-
-# The command and output for yum repolist enabled
-
+## The command and output for yum repolist enabled
 <pre><code>
 [root@ip-172-31-16-4 ec2-user]# yum repolist enabled
 Loaded plugins: fastestmirror
@@ -81,3 +76,9 @@ extras                                                                  CentOS-6
 updates                                                                 CentOS-6 - Updates                                                                                                603
 repolist: 19,591
 </code></pre>
+
+# 2 Users
+
+  Checking users and groups
+  cat /etc/passwd | grep -e social -e democratic -e bavaria  -e saxony
+  cat /etc/group | grep -e social -e democratic -e bavaria  -e saxony
