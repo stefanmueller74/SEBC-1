@@ -4,9 +4,7 @@ It was both - very useful but also very diffcult (for me as I'm not an expert on
 ### Which topic was least familiar to you? Which topic was most familiar?
 
 * Most familiar: everything around databases, general concept of an hadoop system
-* Leat familiar
-** KERBEROS - I skipped the whole labs because I had absolutely no experience with that
-** Network configuration 
+* Leat familiar: KERBEROS (I skipped the whole labs because I had absolutely no experience with that), Network configuration 
 
 ### Which topic did you feel was most helpful? Which topic was not useful, if any?
 
@@ -26,3 +24,7 @@ But if I had to I would have a long was to go in these areas:
 A really great course with lot of great resources and knowledgde!
 
 But the content was way too much for doing both at the same time: listening to the trainers and setting up the cluster handson to cover up the misssed / unfinished labs.
+
+Recommendation: either stripping down the handson-labs a bit AND/OR providing a litte bit more "step by step"-Documentation so that the people actually do the stuff hands-on but maybe saving some time by less need for research/trial and error.
+
+But I would definitely recommend the course (for experienced colleagues :)).
