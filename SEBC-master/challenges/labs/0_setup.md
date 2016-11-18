@@ -79,6 +79,21 @@ repolist: 19,591
 
 # 2 Users
 
-  Checking users and groups
-  cat /etc/passwd | grep -e social -e democratic -e bavaria  -e saxony
-  cat /etc/group | grep -e social -e democratic -e bavaria  -e saxony
+## Creating Users & Groups
+
+    groupadd democratic
+    groupadd social
+    adduser bavaria -u 2700 -G social
+    adduser saxony -u 2800 -G democratic
+
+## Checking users and groups
+    [root@ip-172-31-16-4 ec2-user]# cat /etc/passwd | grep -e social -e democratic -e bavaria  -e saxony
+    bavaria:x:2700:2700::/home/bavaria:/bin/bash
+    saxony:x:2800:2800::/home/saxony:/bin/bash
+
+    [root@ip-172-31-16-4 ec2-user]#     cat /etc/group | grep -e social -e democratic -e bavaria  -e saxony
+    democratic:x:501:saxony
+    social:x:502:bavaria
+    bavaria:x:2700:
+    saxony:x:2800:
+
