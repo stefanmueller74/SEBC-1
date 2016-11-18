@@ -1,4 +1,4 @@
-# Results
+# 1 Results
 ## ls -l /etc/yum.repos.d
     [root@ip-172-31-16-5 ec2-user]# ls -l /etc/yum.repos.d
     total 44
@@ -12,9 +12,8 @@
     -rw-r--r--. 1 root root 1056 Nov  5  2012 epel-testing.repo
     -rw-r--r--  1 root root 1414 Nov 18 18:11 mysql-community.repo
     -rw-r--r--  1 root root 1440 Sep 12 19:32 mysql-community-source.repo
-    
+ 
 ## Restricting GRANT on scm to CM machine
-
     mysql> revoke all on scm.* from 'scm'@'%';
     mysql> grant all on scm.* TO 'scm'@'172.31.16.5' IDENTIFIED BY 'scm_password';
     mysql> select * from information_schema.schema_privileges;
@@ -40,7 +39,7 @@
         | 'scm'@'172.31.16.5' | def           | scm          | EVENT                   | NO           |
         | 'scm'@'172.31.16.5' | def           | scm          | TRIGGER                 | NO           |
 
-## SCM_Prepare
+## Command/Output scm_prepare_database.sh
      [root@ip-172-31-16-5 ec2-user]# sudo /usr/share/cmf/schema/scm_prepare_database.sh mysql scm scm scm_password -h 172.31.16.4 -P 3306
     JAVA_HOME=/usr/java/jdk1.7.0_67-cloudera
     Verifying that we can write to /etc/cloudera-scm-server
