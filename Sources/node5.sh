@@ -1,0 +1,1 @@
+ssh -i "/home/ec2-user/sebc_v2.pem" ec2-user@172.31.16.8
